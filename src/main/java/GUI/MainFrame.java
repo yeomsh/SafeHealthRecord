@@ -33,7 +33,7 @@ public class MainFrame extends JFrame{
 	public SignUpDialog signUpDialog = new SignUpDialog(this);
 
 	public MainFrame() {
-		super("근로계약서 시스템");
+		super("메인 화면");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(WIDTH, HEIGHT);
 		this.setLayout(null);
