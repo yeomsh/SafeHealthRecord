@@ -2,13 +2,13 @@
 
 ### 2020 건국대학교 Learning&Sharing 최종 산출물<br>(Parks Children팀 - 염상희 조원빈 천세진 최승연)
 
-## 1. 기획 배경
+# 1. 기획 배경
 ###### 건강기록을 안전하게 보관하려면 어떻게 해야할까요?
 ###### 인터넷에 떠다니는 우리의 개인정보가 더 이상 나만의 것이 아니라고 생각해보신적 있으신가요?
 
 ##### 나의 개인정보가 온전히 나만의 것이 되어야 한다는 아주 기본적인 생각에서 본 프로젝트는 시작되었습니다!
 
-## 2. 기능
+# 2. 기능
 Java GUI(Swing)을 이용하여, 고정 아이피 내에서 안전한 처방전 작성이 가능하다.
 <br>작성된 처방전은 블록체인의 개념을 사용하여, 위변조 및 부인을 방지한다.
 ## 2.1 실행화면
@@ -23,7 +23,7 @@ Java GUI(Swing)을 이용하여, 고정 아이피 내에서 안전한 처방전 
 ## 2.3 처방전 정보 조회
 블록체인에 올라간 처방전이라면, 작성된 파일이 저장되고 처방전 정보 기록 화면과 같이 조회 가능하다.
 
-## 3. 기술
+# 3. 기술
 * BlockChain
   * nonce = 5로 설정
 * ECDSA - 전자 서명
@@ -32,7 +32,7 @@ Java GUI(Swing)을 이용하여, 고정 아이피 내에서 안전한 처방전 
   * KDF2BytesGenerator (SHA256Digest)
   * hMacKey tag (Data integration validation)
 
-## 4. 참고자료
+# 4. 참고자료
 * Satoshi Nakamoto, “Bitcoin: A Peer-to-Peer Electronic Cash System”, 2008
 * ECIES - https://github.com/sjdonado/ecies
 * Koblitz N, Elliptic Curve Cryptoystems Mathematics of Computation, 1987; 48:203-209
