@@ -72,9 +72,12 @@ class MyCalendar extends Panel {
 
    public void setSelectDate(JSONObject data) {
       System.out.println(data);
-      cyear.select((int)data.get("year")-2010);
-      cmonth.select((int)data.get("month")-1);
-      cdate.select((int)data.get("date")-1);
+      Long d1 = (Long)data.get("year")-2010;
+      Long d2 = (Long)data.get("month")-1;
+      Long d3 = (Long)data.get("date")-1;
+      cyear.select(d1.intValue());
+      cmonth.select(d2.intValue());
+      cdate.select(d3.intValue());
    }
 
    MyCalendar() {

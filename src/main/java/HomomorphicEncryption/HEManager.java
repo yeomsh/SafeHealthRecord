@@ -105,9 +105,9 @@ public class HEManager {
             ECIESManager eciesManager = new ECIESManager();
             contract.fileData = eciesManager.decryptCipherContract(contract.cipher, user.eciesPrivateKey,contract.IV); //이걸 static으로 만들고싶음
         }
-        String[] keywordArr = new String[]{((JSONObject)contract.fileData.get("oSign")).get("oSign1").toString(), contract.fileData.get("wName").toString()};
+        String[] keywordArr = new String[]{((JSONObject)contract.fileData.get("wSign")).get("wSign1").toString(), ((JSONObject)contract.fileData.get("oSign")).get("oSign1").toString()};
         System.out.println("oSign: "+((JSONObject)contract.fileData.get("oSign")).get("oSign1").toString());
-        System.out.println("wName: "+contract.fileData.get("wName").toString());
+        System.out.println("wName: "+((JSONObject)contract.fileData.get("wSign")).get("wSign1").toString());
         //점주는 노동자의 qid를 모르기때뭉네 한꺼번에 업로드할 수 없음
         user.ChangeUserR();
         //일단 oName이라 해두는데 , 이건 자기 타입에 맞게 oName or wName으로 분기시키면 될듯

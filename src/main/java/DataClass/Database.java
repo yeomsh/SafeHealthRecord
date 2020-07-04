@@ -31,7 +31,7 @@ public class Database {
     public User myUser = null;
     public Database(){
 //        String dburl = "mongodb://id:pw@192.168.43.253:27017/mydb";
-        MongoClient mongoClient = new MongoClient("114.70.22.2",27017);
+        MongoClient mongoClient = new MongoClient("127.0.0.1",27017);
         //203.252.157.85(교수님)
 //        mongoClient = new MongoClient("203.252.166.224", 27017);(501컴퓨터)
 
@@ -40,7 +40,7 @@ public class Database {
         user = database.getCollection("user");
     }
     public Document userDoc(User user){
-        return new Document("id",user.id.toString(16))
+        return new Document("id","1a234cd")
                 .append("userType",user.userType.ordinal())
                 .append("ip",user.ip)
                 .append("uid", user.uid)

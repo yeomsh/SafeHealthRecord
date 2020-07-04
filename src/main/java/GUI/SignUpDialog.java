@@ -78,9 +78,9 @@ public class SignUpDialog extends JDialog{
         //ButtonGroup은 라디오 버튼 중 한가지만 선택하기 위해서
         ButtonGroup bg = new ButtonGroup();
 
-        userType[0] = new JRadioButton("점주");
+        userType[0] = new JRadioButton("의사");
         userType[0].setSelected(true);
-        userType[1] = new JRadioButton("근로자");
+        userType[1] = new JRadioButton("환자");
 
         for(JRadioButton i : userType) {
             jp2.add(i);

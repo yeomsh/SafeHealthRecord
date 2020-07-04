@@ -96,6 +96,7 @@ public class CSManager {
         //회원가입하면, 키 발급, 아이디 발급, (kgc공개키는 키워드 등록할 때 받기(?)), 데베 등록
         InetAddress ip = InetAddress.getLocalHost();
         myIp = ip.getHostAddress();
+       // myIp = "127.0.0.1";
         //System.out.println("ip : " + myIp);
         String uid = mHandler.showInitDialog(myIp);
         System.out.println("사용자가 입력한 uid : "+uid + "\n 사용자의 ip : " + myIp);

@@ -68,11 +68,39 @@ public class CSEventHandler implements ActionListener, ChangeListener, WindowLis
         if (source == frame.mpNew.button){
             System.out.println("mpNew");
             try {
-                if(manager.user.userType == USERTYPE.EMPLOYER)
-                    showIpDialog();
-                else {
-                    frame.addLog("계약서 생성하기는 의료진이 시작 가능합니다.\n");
-                }
+               // if(manager.user.userType == USERTYPE.EMPLOYER)
+                   // showIpDialog();
+               // else {
+                    System.out.println(manager.user.contractList.size());
+                    if(!manager.user.contractList.isEmpty()) {
+                        int index = 0;
+                        BCManager.chainStr = manager.chainStr;
+                        if (manager.user.contractList.get(index).step == 4) {
+                            DataClass.Contract contract = manager.user.contractList.get(index);
+                            try {
+                                new BCManager(manager.user, manager.db,contract,new DataSource.Callback() {
+                                    @Override //HE 작업하기
+                                    public void onDataLoaded() throws Exception {
+                                        manager.uploadContract(contract);
+                                    }
+                                    @Override //그냥 끝내기
+                                    public void onDataFailed() {
+
+                                    }
+                                });
+                            } catch (Exception ex) {
+                                ex.printStackTrace();
+                            }
+                        } else {
+                            try {
+                                new BCManager(manager.user, manager.db,manager.user.contractList.get(index));
+                            } catch (Exception ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                    }
+                    //frame.addLog("처방전 생성하기는 의료진이 시작 가능합니다.\n");
+               // }
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -231,7 +259,7 @@ public class CSEventHandler implements ActionListener, ChangeListener, WindowLis
 
     }
     public void tabStateChanged() throws Exception {
-        if (frame.jTab.getSelectedIndex() == 3) { // 선택한 탭이 "refresh" 라면 "기존"탭으로 유지하기
+        if (frame.jTab.getSelectedIndex() == 2) { // 선택한 탭이 "refresh" 라면 "기존"탭으로 유지하기
             Boolean isUpdate = true;
             manager.loadContractData();
             System.out.println("size: "+manager.user.contractList.size());
