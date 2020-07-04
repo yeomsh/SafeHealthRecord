@@ -14,7 +14,7 @@ Java GUI(Swing)을 이용하여, 고정 아이피 내에서 안전한 처방전 
 ## 2.1 실행화면
 <div>
 <img src = "https://user-images.githubusercontent.com/39792772/86442075-2ab4ac00-bd48-11ea-9c8e-e8691345c446.JPG" width="200px"></img>
-<img src = "https://user-images.githubusercontent.com/39792772/86441058-9138ca80-bd46-11ea-9fbb-f76c6ff39926.JPG" width="20%"></img>
+<img src = "https://user-images.githubusercontent.com/39792772/86441058-9138ca80-bd46-11ea-9fbb-f76c6ff39926.JPG" width="200px"></img>
 </div>
 
 ## 2.2 처방전 정보 기록 및 저장
@@ -23,7 +23,20 @@ Java GUI(Swing)을 이용하여, 고정 아이피 내에서 안전한 처방전 
 ## 2.3 처방전 정보 조회
 블록체인에 올라간 처방전이라면, 작성된 파일이 저장되고 처방전 정보 기록 화면과 같이 조회 가능하다.
 
-# 3. 기술
+# 3. 메뉴얼 및 순서
+## 3.1 회원가입 및 로그인
+- 의사 또는 환자를 선택 및 사용할 아이디를 입력하여 회원가입한다.
+- 회원가입시, ECDSA와 ECIES의 공개키, 개인키가 생성된다.
+- 로그인시, 아이디를 입력하고 아이디와 IP를 비교하여 로그인한다.
+## 3.2 처방전 작성 및 업로드
+- 시작하기를 통해 보여지는 처방전은 가장 최근의 처방전이다.
+- 모든 처방전 파일은 암호화되어서 저장된다.
+- 흐름도
+<br><img src = "https://user-images.githubusercontent.com/39792772/86505896-fce16d00-be04-11ea-9ebb-e9be728e43b7.png" width = "400px" ></img>
+## 3.3 처방전 검색하기
+- 병원명 또는 환자이름으로 처방전 검색이 가능하다.
+
+# 4. 기술
 * BlockChain
   * nonce = 5로 설정
 * ECDSA - 전자 서명
@@ -32,7 +45,7 @@ Java GUI(Swing)을 이용하여, 고정 아이피 내에서 안전한 처방전 
   * KDF2BytesGenerator (SHA256Digest)
   * hMacKey tag (Data integration validation)
 
-# 4. 참고자료
+# 5. 참고자료
 * Satoshi Nakamoto, “Bitcoin: A Peer-to-Peer Electronic Cash System”, 2008
 * ECIES - https://github.com/sjdonado/ecies
 * Koblitz N, Elliptic Curve Cryptoystems Mathematics of Computation, 1987; 48:203-209
