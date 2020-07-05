@@ -37,6 +37,8 @@ Java GUI(Swing)을 이용하여, 고정 아이피 내에서 안전한 처방전 
 - 병원명 또는 환자이름으로 처방전 검색이 가능하다.
 
 # 4. 기술
+* 암호 프로토콜 구현 및 검증
+  * "fully homomorphic encryption over the integers" 및 "Verifiable Public Key Encryption With Keyword Search Based on Homomorphic Encryption in Multi-User Setting"을 테스트코드로 작성하여 어느 상황에서 적용가능한 프로토콜인지 분석 및 구현하였다.
 * BlockChain
   * nonce = 5로 설정
 * ECDSA - 전자 서명
